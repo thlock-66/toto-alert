@@ -2,7 +2,7 @@ import cron from 'node-cron'
 import { fetchTotoData } from './scraper.js'
 import { sendTotoAlert } from './telegram.js'
 
-const THRESHOLD = 4_500_000
+const THRESHOLD = 0
 
 async function check() {
   try {
