@@ -36,4 +36,12 @@ describe('sendTotoAlert', () => {
       sendTotoAlert({ jackpot: 5_000_000, nextDrawDate: 'Thu, 17 Jul 2026 , 6.30pm' })
     ).rejects.toThrow('Telegram API error: 401')
   })
+
+  it('throws when env vars are missing', async () => {
+    delete process.env.TELEGRAM_BOT_TOKEN
+    delete process.env.TELEGRAM_CHAT_ID
+    await expect(
+      sendTotoAlert({ jackpot: 5_000_000, nextDrawDate: 'Thu, 17 Jul 2026 , 6.30pm' })
+    ).rejects.toThrow('Missing TELEGRAM_BOT_TOKEN or TELEGRAM_CHAT_ID env var')
+  })
 })
