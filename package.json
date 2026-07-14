@@ -1,0 +1,16 @@
+{
+  "name": "toto-alert",
+  "version": "1.0.0",
+  "type": "module",
+  "scripts": {
+    "start": "node src/index.js",
+    "test": "vitest run"
+  },
+  "dependencies": {
+    "cheerio": "^1.0.0",
+    "node-cron": "^3.0.3"
+  },
+  "devDependencies": {
+    "vitest": "^1.6.0"
+  }
+}
